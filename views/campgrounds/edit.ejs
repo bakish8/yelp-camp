@@ -1,0 +1,139 @@
+<% layout('layouts/boiler2') %>
+    <br>
+    <br>
+
+
+
+
+    <div class="row">
+        <div class="col-6 offset-3">
+
+<div style="background-color: rgba(66, 66, 66, 0.459);"  class="card mb-3" style="width: 38rem;">
+  <div class="card-body">
+
+  <h1 class="card-title" style="color: #c2f800;" class="text-center">Change camp</h1>
+            <hr>
+
+    <h1 class="text-center" style="color: #f9844a;">
+        <%=campground.title%>
+    </h1>
+    <hr>
+
+    <div class="col-6 offset-3">
+        <form method="POST" action="/campgrounds/<%=campground.id%>?_method=PUT" novalidate class="validated-form"
+            enctype="multipart/form-data">
+            <div class="form-group">
+                <fieldset disabled>
+
+                    <label style="color: #d9ed92;" class='form-label' for="disabledTextInput" class="col-sm-2 col-form-label">Camp ID:</label>
+                    <input class='form-control' type="text" class="form-control" id="disabledTextInput"
+                        placeholder="<%=campground.id%>" name="campground[title]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </fieldset>
+            </div>
+
+
+            <div class="form-group">
+                <label style="color: #d9ed92;" class='form-label' for="title" class="col-sm-2 col-form-label">
+                    Camp name:</label>
+                <input class='form-control' type="text" class="form-control" id="title" name="campground[title]"
+                    value="<%=campground.title%>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label style="color: #d9ed92;" class='form-label' for="location" class="col-sm-2 col-form-label">
+                    Location : </label>
+                <input class='form-control' type="text" class="form-control" id="location" placeholder="location"
+                    name="campground[location]" value="<%=campground.location%>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+
+
+
+
+            <!-- 
+            <div class="form-group">
+                <label class='form-label' for="Image" class="col-sm-2 col-form-label">
+                    image URL: </label>
+                <input class='form-control' type="url" class="form-control" id="Image" placeholder="new image URL"
+                    name="campground[Image]" value="campground.Image%>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div> -->
+
+
+
+            <div class="form-group">
+                <label style="color: #d9ed92;" class='form-label' for="price" class="col-sm-2 col-form-label">
+                    Price: </label>
+                <div class="input-group ">
+                    <span class="input-group-text">$</span>
+                    <input class='form-control' type="number" class="form-control" id="price" placeholder="Price"
+                        name="campground[price]" aria-label="Amount (to the nearest dollar)"
+                        value="<%=campground.price%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="form-group">
+                <label style="color: #d9ed92;" for="description">Description:</label>
+                <textarea class="form-control" rows="3" name="campground[description]" id="description"
+                    required><%=campground.description%></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <label style="color: #d9ed92;" class='form-label' for="image" class="col-sm-2 col-form-label">
+                Upload More Camp Images: </label>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" name="image" id="customFile" multiple>
+                <label class="custom-file-label" for="image">Upload More...</label>
+            </div>
+            <br>
+            <br>
+
+            <div class="mb-3">
+                <% campground.images.forEach(function(img,i) {%>
+
+
+
+                    <img src="<%=img.thumbnail%> " alt="" class="img-thumbnail">
+                    <label style="color: #f94144;" for="image-<%=i%>">Delete?</label>
+
+                    <div class="form-check-inline">
+                        <input type="checkbox" id="image-<%=i%>" name="deletedImages[]" value="<%=img.filename%>">
+                    </div>
+                    <br>
+                    <%})%>
+            </div>
+
+
+
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block"><b>Submit</b></button>
+        </form>
+
+        <form action="/campgrounds/<%=campground.id%>">
+            <button class="btn btn-warning btn-lg btn-block">Cancel</button>
+
+        </form>
+
+    <p style="color: #d9ed928e;" class="card-text">Please ENTER a Valid details inside The Fields.</p>
+<br>
+  </div>
+</div>

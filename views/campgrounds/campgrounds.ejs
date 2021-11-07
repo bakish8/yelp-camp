@@ -1,0 +1,83 @@
+<% layout('layouts/boilerplate3') %>
+
+    <section class="cardtempel">
+
+
+
+       
+
+        <% for(let campground of campgrounds){%>
+
+            <div id="cardush" class="card" mb-3>
+                <div class="row">
+    
+            <%if(campground.images.length) {%>
+                    <div class="col-md-4">
+            <img id="campsIndexPIC" class="img-fluid" alt="" src="<%=campground.images[0].url%>">
+                    </div>
+
+            <% }else {%>
+                    <div class="col-md-4">
+            <img class="img-fluid" alt=""
+                src="https://res.cloudinary.com/douqbebwk/image/upload/v1600103881/YelpCamp/lz8jjv2gyynjil7lswf4.png">
+                    </div>
+            <% } %>
+
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h2  class="card-title"> 
+                                <a style="color: #c2f800;" href='/campgrounds/<%=campground.id%>'>
+                                    <%=campground.title%>
+                                </a>
+                            </h2>
+                            <h3 style="color: #d9ed92;" >
+                                <%=campground.location%>
+
+                            </h3>
+
+
+                            <p style="color: #52b69a;" class="card-text">
+                                <%=campground.description%>
+                            </p>
+                        
+                            <p style="color: #f8961e;">price is: <b>
+                                    <%=campground.price%>$ for a night
+                                </b></p>
+                            <a href='/campgrounds/<%=campground.id%>' class="btn btn-success p-4">Watch:<b>
+                                    <%=campground.title%>
+                                </b></a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%}%>
+
+
+    </section>
+
+
+
+
+<footer class="fixed-bottom text-muted py-5 mt-auto" id="footered">
+
+    <div class="container" style="background-color:rgba(29, 29, 29, 0.397);">
+        <p class="float-end mb-1">
+            <a style="color: rgb(200, 255, 0);" href="#">Back to top</a>
+        </p>
+     
+        <p style="color: aliceblue;" class="mb-0">New to YelpCamp? <a style="color: rgb(200, 255, 0);" href="/">Visit the homepage</a> or see our <a style="color: rgb(200, 255, 0);" href="/campgrounds">camps
+                near you</a>.</p>
+<br>
+    </div>
+</footer>
+
+    <script>
+        const mapToken ='<%-process.env.MAPBOX_TOKEN%>';
+        const campgrounds = { features: JSON.parse('<%-JSON.stringify(campgrounds)%>') };
+//אנחנו מקבלים לאינדקס את קאמפגראונדס אנחנו עושים לו סטרינגפיי  כדי לשלח לקלאסטר מאפ בג'אבהסקריפטס את הדאטה המתאימה כדי שיטען לנו את המפות על הקלאסטר מטפ המאפ בוקס מצפה ממאיתנו למאפיין פיצ'רס לכן רשמנו פיצ'רס
+
+ </script>
+
+    <script src="/javascripts/Clustermap.js"></script>
+

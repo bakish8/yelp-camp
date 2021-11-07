@@ -1,0 +1,40 @@
+<% layout('layouts/boiler2') %>
+
+
+    <div class="row">
+ <div style="background-color: rgba(66, 66, 66, 0.459);" class="card">
+            <h1 style="color: #c2f800;" class="text-center">LOG IN</h1>
+            <hr>
+
+            <form action="/login" method="POST" novalidate class="validated-form">
+
+                <div class="form-group">
+                    <label style="color: #d9ed92;" class='form-label' for="username" class="col-sm-2 col-form-label">username:</label>
+                    <input class='form-control' type="text" class="form-control" id="username" placeholder="username"
+                        name="username" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label style="color: #d9ed92;" class='form-label' for="password" class="col-sm-2 col-form-label">
+                        password : </label>
+                    <input class='form-control' type="password" class="form-control" id="password"
+                        placeholder="password" name="password" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+
+                <button class="btn btn-success btn-lg btn-block"><b>LOG-IN</b></button>
+            </form>
+
+            <form action="/">
+                <button class="btn btn-warning btn-lg btn-block">Cancel</button>
+
+            </form>
+        </div>
+    </div>
+    </div>

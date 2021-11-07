@@ -1,0 +1,30 @@
+<% layout('layouts/boilerplate')%>
+    <!--קלוט את הבוליפר פלייט שנמצא בלייטפוט כמו שאר הקבצים של האיג'יאס
+-->
+    <br>
+    <div class="row">
+        <!--תצוגת שורה עיצוב בוטסטראפ נקלט -->
+        <div class="col-8 offset-2">
+            <!--מרכז-->
+            <div class="alert alert-danger" role="alert">
+                <!--פתח חלון שגיאה מעוצב של בוטסטראפ בצבע אדום שהתפקיד שלו יהיה שגיאה-->
+                <h1 class="alert-heading">
+                    ERROR <%=err.status%>!
+                </h1>
+                <hr>
+                <h3 class="alert-heading">
+                    <%=err.message%>
+                </h3>
+                <!--הכותרת של הריבוע האדום המעוצב הזה יקבל את ההודעה של השגיאה וישים אותה באייץ'4-->
+                <p>
+                    <%= err.stack %>
+                        <!--ידפיס את כל השגיאה בתוך התוכן של הריבוע האדום והמעוצב בתוף פארגראפ-->
+                </p>
+                <hr>
+                <p>
+                    GO back to the <a href="/" class="alert-link">HOME</a> Page
+                </p>
+
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,37 @@
+
+#formcolor{
+    background-color: rgba(163, 255, 155, 0.089);
+    border-radius: 80%;
+  }
+  
+  
+  .starsWeCENTER{
+    display: flex;
+    justify-content: center;
+  }
+  
+  #sendbtn{
+    background: green;
+      color: rgb(255, 255, 255);
+      border-color:(230, 195, 43);
+  border: 2px solid ;
+  padding:0.5em 2em ;
+  transition: color 2.5s,border-color 2.5s,box-shadow 2.5s,transform 2.5s,border-radius 2.5s,background-color 1S;
+  
+  
+  
+  }
+  
+  #sendbtn:hover{
+    background-color: rgb(0, 156, 0);
+  cursor: pointer;
+  border-color: rgb(124, 124, 124);
+  border-radius: 10px;
+  color: white;
+  /*    הראשון זה כמה ילך ימינה או שמאלה השני כמה ילך למטה השלישי כמה בלורי הוא יהיה הרביעי זההספרד רדיוס והחמישי צבע*/
+  box-shadow: 0 0.5em 0.5em -0.4em rgb(2, 109, 7);
+  
+  /*    הטרסנספורם טרנסלייט עוזר לכפתור לעלות למעלה ב25 פיקסלים*/
+  transform: translateY(-25px)
+  
+  
